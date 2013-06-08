@@ -1,0 +1,26 @@
+﻿<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>足し算しかできない電卓</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+<!-- コントローラを読み込む -->
+  <script src="js/ctl_calc.js"></script>
+</head>
+<!-- コントローラの関数Ctl_calcを呼ぶ -->
+<body ng-controller="Ctl_calc">
+  足し算しかできない電卓<br>
+<!-- ng-から始まるのは、angular-jsのAPI -->
+<!-- ng-modelは単にparam1というモデルを定義している？-->
+  <input type="text" ng-model="param1">
+<!-- ng-changeは、チェックボックスとか値が変更された時のイベントを定義する。らしい。コントローラにあるchangeというメソッドを呼び出す -->
+ ＋<input type="text" ng-model="param2" ng-change="change()">
+＝{{answer}}
+<!-- Ctl_calcのスコープはここまで。（bodyタグにng-controllerを付けているため。） -->
+</body>
+
+</head>
+</html>
+
